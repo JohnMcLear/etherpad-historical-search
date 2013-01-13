@@ -1,0 +1,11 @@
+{
+    "parts": [
+        {
+            "name": "ep_historicalsearch",
+            "hooks": {
+                "expressCreateServer" : "ep_historicalsearch/index:registerRoute",
+                "eejsBlock_timesliderBody": "ep_historicalsearch/index"
+            }
+        }
+    ]
+}

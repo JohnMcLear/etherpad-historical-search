@@ -1,0 +1,16 @@
+{
+  "name": "ep_historicalsearch",
+  "version": "0.0.1",
+  "description": "Search through the history of documents to find when a query/search pattern or string existed",
+  "author": {
+    "name": "John McLear",
+    "email": "john@mclear.co.uk",
+    "url": "http://mclear.co.uk"
+  },
+  "engines": {
+    "node": ">= 0.6.0"
+  },
+  "dependencies": {},
+  "_id": "ep_historicalsearch@0.0.1",
+  "_from": "node_modules/ep_historicalsearch/"
+}
