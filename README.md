@@ -1,6 +1,6 @@
 # Search through pad history on Etherpad Lite.
 
-[img]http://i.imgur.com/gLoYk.png[/img]
+![Alt text](http://i.imgur.com/gLoYk.png)
 
 Ever worked on a document for ages and forgotten if you ever wrote about a certain topic or thing?  Well now you can search back the history of your topic.
 
@@ -15,5 +15,6 @@ Authentication
 Use SocketIO instead of AJAX
 Minimize heavy lifting for large pads
 
-
+# IMPORTANT
+Requires the very latest Etherpad Lite OR this branch: https://github.com/ether/etherpad-lite/pull/1352
 
