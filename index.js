@@ -34,7 +34,7 @@ exports.registerRoute = function (hook_name, args, cb) {
           result[revNo] = count; // Write the count to a result object
 
 //          console.warn("String exists " + count + " times in revNo " +revNo);
-          callback(err);
+          callback();
         });
 
       }, function(err){
