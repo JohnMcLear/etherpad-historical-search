@@ -13,8 +13,8 @@ exports.registerRoute = function (hook_name, args, cb) {
     var searchString = req.query["query"];
     var padId = req.query["padId"];
 
-    padId = "test"; // DELETE ME
-    searchString = "test"; // DELETE ME
+//    padId = "test"; // DELETE ME
+//    searchString = "test"; // DELETE ME
 
     // Holding values
 //    var result = {0:1,1:1,2:2,3:2,4:2,5:3,6:3,7:4,8:4,9:5,10:3,11:2,12:1,13:0,13:0}; // example results
