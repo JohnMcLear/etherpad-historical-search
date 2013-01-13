@@ -41,7 +41,7 @@ $('#historicalSearchForm').submit(function(event){ // Send query to server
     "query" : query
   }
 
-  var url = '/historicalSearch?padID='+data.padId+'&query='+data.query;
+  var url = '/historicalSearch?padId='+data.padId+'&query='+data.query;
 
   $.get(url, function(results, query){
     historicalSearchResults = results;
