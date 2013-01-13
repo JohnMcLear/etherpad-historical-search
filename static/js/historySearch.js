@@ -59,14 +59,12 @@ $(window).resize(function() { // On browser resize draw the count results
 
 
 
-/*
 function currentPadId(){ // get the current padId
   //get the padId out of the url -- stolen from timeslider.js
   var urlParts = document.location.pathname.split("/");
   padId = decodeURIComponent(urlParts[urlParts.length-2]);
   return padId;
 }
-*/
 
 function updateTimesliderWithSearchResults(){ // Updates the UI with results
   // Clean up first
