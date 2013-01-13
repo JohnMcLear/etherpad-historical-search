@@ -15,4 +15,4 @@ Install via the /admin/plugins UI in Etherpad Lite.
 * Use SocketIO instead of AJAX (for streaming when searching through large pads)
 * Minimize heavy lifting for large pads (by using diffs instead of entire pad context when doing regex)
 * UI polishing
-
+* Progress indicator
