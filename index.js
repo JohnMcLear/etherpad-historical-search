@@ -10,6 +10,7 @@ exports.registerRoute = function (hook_name, args, cb) {
   args.app.get('/historicalSearch', function(req, res) {
 
     var searchString = req.query["query"];
+    searchString = escapeRegExp(searchString);
     var padId = req.query["padId"];
 
     var result = {};
@@ -44,6 +45,11 @@ exports.registerRoute = function (hook_name, args, cb) {
     });
   });
 };
+
+
+function escapeRegExp(str) {
+  return str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
+}
 
 
 exports.eejsBlock_timesliderBody = function (hook_name, args, cb) {
