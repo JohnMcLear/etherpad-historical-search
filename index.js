@@ -11,7 +11,7 @@ exports.registerRoute = function (hook_name, args, cb) {
   // args.app.get('/test', function(req, res) { // Leaving in for further dev & testing
 
     var searchString = req.query["query"];
-    console.warn(req.query);
+//    console.warn(req.query);
     var padId = req.query["padId"];
 
 //    padId = "test"; // DELETE ME
