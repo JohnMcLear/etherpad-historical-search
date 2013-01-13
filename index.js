@@ -8,24 +8,14 @@ var eejs = require('ep_etherpad-lite/node/eejs')
 // testing on /test
 exports.registerRoute = function (hook_name, args, cb) {
   args.app.get('/historicalSearch', function(req, res) {
-  // args.app.get('/test', function(req, res) { // Leaving in for further dev & testing
 
     var searchString = req.query["query"];
-//    console.warn(req.query);
     var padId = req.query["padId"];
-
-//    padId = "test"; // DELETE ME
-//    searchString = "test"; // DELETE ME
-//    console.warn("Searching for "+searchString+" in padID "+padId);
-
-    // Holding values
-//    var result = {0:1,1:1,2:2,3:2,4:2,5:3,6:3,7:4,8:4,9:5,10:3,11:2,12:1,13:0,13:0}; // example results
-//    res.send(JSON.stringify(result)); // test sent TODO remove me
 
     var result = {};
 
     padManager.getPad(padId, function(err, _pad){
-      pad = _pad;
+      var pad = _pad;
       var num = pad.getHeadRevisionNumber(); // Gets the # of revisions in a pad
       var result = {}; // The object we store the result in before sending back to client
       var revs = []; // The array we will store the revs in for this pad
