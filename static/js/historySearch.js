@@ -1,6 +1,6 @@
 <script type="text/javascript">
 // Most of this is Bad Javascript.  It is bad because none of the hooks etc. I needed at the time were available.
-// Apologies..  J
+// Apologies..  J -- I have now added the hooks but I need time to rewrite with them in..  
 
 
 // A global object for search Results as I don't know a better way to make it work on resize
@@ -33,10 +33,11 @@ $('#timeslider-top').append("<div class='historicalSearch popup' style='float:ri
 $('#historicalSearchForm').submit(function(event){ // Send query to server
   event.preventDefault(); // prevent default submit action
   var query = $('#historicalSearchQuery').val(); // get the input value
+  var padId = currentPadId();
 
   // Due to limitations with the timeslider on the plugin framework we have to do an AJAX call here
   data = {
-    "padId" : "test" ,
+    "padId" : padId ,
     "type" : "historicalSearch",
     "query" : query
   }
@@ -57,6 +58,15 @@ $(window).resize(function() { // On browser resize draw the count results
 // End of listeners
 
 
+
+/*
+function currentPadId(){ // get the current padId
+  //get the padId out of the url -- stolen from timeslider.js
+  var urlParts = document.location.pathname.split("/");
+  padId = decodeURIComponent(urlParts[urlParts.length-2]);
+  return padId;
+}
+*/
 
 function updateTimesliderWithSearchResults(){ // Updates the UI with results
   // Clean up first

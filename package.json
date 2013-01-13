@@ -1,6 +1,6 @@
 {
   "name": "ep_historicalsearch",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Search through the history of documents to find when a query/search pattern or string existed",
   "author": {
     "name": "John McLear",
