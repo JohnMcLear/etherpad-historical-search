@@ -16,6 +16,3 @@ Install via the /admin/plugins UI in Etherpad Lite.
 * Minimize heavy lifting for large pads (by using diffs instead of entire pad context when doing regex)
 * UI polishing
 
-# IMPORTANT
-Requires the very latest Etherpad Lite OR this branch: https://github.com/ether/etherpad-lite/pull/1352
-
