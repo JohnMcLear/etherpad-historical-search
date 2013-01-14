@@ -4,6 +4,8 @@
             "name": "ep_historicalsearch",
             "hooks": {
                 "expressCreateServer" : "ep_historicalsearch/index:registerRoute",
+                "eejsBlock_timesliderEditbarRight": "ep_historicalsearch/index",
+                "eejsBlock_timesliderTop": "ep_historicalsearch/index",
                 "eejsBlock_timesliderBody": "ep_historicalsearch/index"
             }
         }

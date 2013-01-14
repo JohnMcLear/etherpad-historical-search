@@ -1,36 +1,14 @@
 <script type="text/javascript">
-// Most of this is Bad Javascript.  It is bad because none of the hooks etc. I needed at the time were available.
-// Apologies..  J -- I have now added the hooks but I need time to rewrite with them in..  
-
-
 // A global object for search Results as I don't know a better way to make it work on resize
 var historicalSearchResults = {};
 
 // Stop the editbar being cropped in IE
 $('#editbar').css({"width":"auto"});
 
-
-
-// Prepare the UI (usually done w/ EJS)	
-$('.editbarright ul').prepend("<li onclick='$(\".historicalSearch\").toggle();return false;'> \
-  <a id=\"exportlink\" title=\"Search history of pad\"> \
-  <div class=\"buttonicon\" style=\"font-size:14px;color:black;width:60px;background-image:none;\">Search</div></a> \
-  </li></ul> \
-");
-
-$('#timeslider-top').append("<div class='historicalSearch popup' style='float:right;display:none;'> \
-  Historical Search (Searches through entire history of document) \
-  <form id='historicalSearchForm' style='display:inline;'> \
-  <input id='historicalSearchQuery' type='text'><input type='submit' value='Search' style='padding:10px'></form> \
-  </div> \
-");
-
-
-
 // Set up listeners
-
 // Prepare a submit function to send the search query to the server
 $('#historicalSearchForm').submit(function(event){ // Send query to server
+  $('#historicalSearchStatus').show();
   event.preventDefault(); // prevent default submit action
   var query = $('#historicalSearchQuery').val(); // get the input value
   var padId = currentPadId();
@@ -47,6 +25,7 @@ $('#historicalSearchForm').submit(function(event){ // Send query to server
   $.get(url, function(results, query){
     historicalSearchResults = results;
     updateTimesliderWithSearchResults(historicalSearchResults, query);
+    $('#historicalSearchStatus').hide();
   });
 
 });
@@ -76,7 +55,7 @@ function updateTimesliderWithSearchResults(){ // Updates the UI with results
   var numberOfRevs = Object.size(results);
 
   // length of bar
-  var sliderBarLength = parseFloat($('#ui-slider-bar').width() -8);
+  var sliderBarLength = parseFloat($('#ui-slider-bar').width());
 
   // The amount of space assigned to each rev
   var pxPerRev = sliderBarLength / numberOfRevs;
@@ -95,10 +74,10 @@ function updateTimesliderWithSearchResults(){ // Updates the UI with results
 }
 
 Object.size = function(obj) { // Get the size of an object when .length doesn't work
-    var size = 0, key;
-    for (key in obj) {
-        if (obj.hasOwnProperty(key)) size++;
-    }
-    return size;
+  var size = 0, key;
+  for (key in obj) {
+    if (obj.hasOwnProperty(key)) size++;
+  }
+  return size;
 };
 </script>

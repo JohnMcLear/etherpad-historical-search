@@ -51,9 +51,17 @@ function escapeRegExp(str) {
   return str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
 }
 
+exports.eejsBlock_timesliderEditbarRight = function (hook_name, args, cb) { 
+  args.content = eejs.require("ep_historicalsearch/templates/historySearch.ejs") + args.content;
+  return cb();
+}
+
+exports.eejsBlock_timesliderTop = function (hook_name, args, cb) {
+  args.content = args.content + eejs.require("ep_historicalsearch/templates/historySearchForm.ejs");
+  return cb();
+}
 
 exports.eejsBlock_timesliderBody = function (hook_name, args, cb) {
   args.content = args.content + eejs.require("ep_historicalsearch/static/js/historySearch.js");
   return cb();
 }
-
