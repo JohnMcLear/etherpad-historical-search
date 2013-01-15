@@ -27,8 +27,8 @@ exports.registerRoute = function (hook_name, args, cb) {
       async.forEachSeries(revs, function(revNo, callback){
         pad.getInternalRevisionAText(revNo, function(junk, text)
         {
-          if(text.text.match(searchString)){ // If we find a match
-            var count = text.text.match(new RegExp(searchString, 'g')).length; // Thanks to rKnLa
+          if(text.text.match(new RegExp(searchString, i))){ // If we find a match
+            var count = text.text.match(new RegExp(searchString, 'gi')).length; // Thanks to rKnLa
           }else{ // If we don't find amatch
             var count = 0;
           }
